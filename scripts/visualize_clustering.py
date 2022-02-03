@@ -5,6 +5,12 @@ import matplotlib.pyplot as plt
 
 
 def kmeans_clustering(csv_file, number_clusters):
+    """
+    Clustering and visualizationusing KMeans
+
+    :param csv_file: String, path to the csv file
+    :param number_clusters: int, number of clusters
+    """
     # read the data set and drop labels
     smiley_df = pd.read_csv(csv_file)
     X = smiley_df.drop('label', axis=1).values
@@ -20,6 +26,13 @@ def kmeans_clustering(csv_file, number_clusters):
 
 
 def dbscan_clustering(csv_file, eps=0.5, min_samples=5):
+    """
+    Clustering and visualization using DBSCAN
+
+    :param csv_file: String, path to the csv file
+    :param eps: The maximum distance between two samples for them to be considered as in the same neighborhood.
+    :param min_samples: The Minimum number of samples in a neighborhood for a point to be considered as a core point.
+    """
     # read the data set and drop labels
     df = pd.read_csv(csv_file)
     X = df.drop('label', axis=1).values
@@ -36,6 +49,11 @@ def dbscan_clustering(csv_file, eps=0.5, min_samples=5):
 
 
 def plot_csv(csv_file):
+    """
+    Plot the data set without any clustering
+
+    :param csv_file: String, path to the csv file
+    """
     df = pd.read_csv(csv_file)
     X = df.drop('label', axis=1).values
 
@@ -47,7 +65,6 @@ def plot_csv(csv_file):
 if __name__ == '__main__':
     # read location of the csv file
     csv_filename = input('Enter the path of the csv file: ') or 'smiley.csv'
-    print(csv_filename)
 
     # plot the csv
     plot_csv(csv_filename)
