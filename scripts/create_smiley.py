@@ -4,8 +4,8 @@ import numpy as np
 
 def create_smiley(csv_filename='smiley.csv'):
     """
-    Create a data set in the shape of a smiley face
-    and save the data set as a csv file at the location specified by csv_filename.
+    Creates a data set in the shape of a smiley face
+    and saves the data set as a csv file at the location specified by csv_filename.
 
     :param csv_filename: String, path in which the result should be saved
     """
